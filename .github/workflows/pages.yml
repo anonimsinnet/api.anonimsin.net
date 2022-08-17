@@ -35,8 +35,11 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: '.'
+      - name: Use Node.js 16.17.0
+        uses: actions/setup-node@v3
+      - name: Install packages
+        run: npm i express
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
       - name: Deploy to GitHub Pages
